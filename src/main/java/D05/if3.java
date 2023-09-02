@@ -14,7 +14,7 @@ public class if3 {
         } else if (tamsayi % 2 != 0) {
             System.out.println("Tek sayi");
         } else {
-            System.out.println("Invalid day name..");
+            System.out.println("ILütfen geçerli bir sayı giriniz");
         }
 
     }
