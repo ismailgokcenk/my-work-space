@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class if5 {
     public static void main(String[] args) {
 
+
+
         Scanner input = new Scanner(System.in);
         System.out.println("Please add a year");
         int year = input.nextInt();
@@ -19,9 +21,6 @@ public class if5 {
             System.out.println("Artık yıl degıldır");
         }
 
-        }
-
     }
 
-
-
+}
