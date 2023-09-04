@@ -5,7 +5,7 @@ public class Concatenation {
 
         String isim = "Ali";
         String soyIsim= "Can";
-        //System.out.println(isim +  " " + soyIsim);
+        System.out.println(isim +  " " + soyIsim);
 
         System.out.println(isim.concat(soyIsim));
 
