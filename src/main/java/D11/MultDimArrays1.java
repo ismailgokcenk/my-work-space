@@ -1,4 +1,4 @@
-package D11.mult;
+package D11;
 
 import java.util.Arrays;
 
