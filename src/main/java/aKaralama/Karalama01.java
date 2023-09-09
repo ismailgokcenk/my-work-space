@@ -1,10 +1,10 @@
-package Day04;
+package aKaralama;
 
-public class D4Prc1 {
+public class Karalama01 {
     public static void main(String[] args) {
 
 
-
     }
+
 
 }

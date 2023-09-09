@@ -2,7 +2,7 @@ package D10;
 
 import java.util.Arrays;
 
-public class arrays {
+public class arrays1 {
     public static void main(String[] args) {
 
 

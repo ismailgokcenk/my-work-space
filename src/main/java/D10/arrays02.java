@@ -9,12 +9,14 @@ public class arrays02 {
         System.out.println(Arrays.toString(aint));
 
         System.out.println("aint.length = " + aint.length);
+        int i = aint.length - 1;
+        System.out.println(i);
 
         int [] aint2 = new int[3];
         System.out.println(Arrays.toString(aint2));
-        aint2[0]= 10;
-        aint2[1]= 20;
-        aint2[2]= 30;
+
+
+
 
 
 

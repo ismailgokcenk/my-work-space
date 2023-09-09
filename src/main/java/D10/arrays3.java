@@ -9,6 +9,14 @@ public class arrays3 {
         Arrays.sort(arrint);
         System.out.println(Arrays.toString(arrint));
 
+        String arrayStr[] = {"a","z","s","g"};
+        System.out.println(Arrays.toString(arrayStr));
+        Arrays.sort(arrayStr);
+        System.out.println(Arrays.toString(arrayStr));
+
+
+        
+
 
         }
 
