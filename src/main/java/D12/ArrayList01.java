@@ -40,6 +40,30 @@ public class ArrayList01 {
         hayvan.set(2,"tavsan"); //2.index i tavsan yaptık
         System.out.println(hayvan); // [kedi, kopek, tavsan]
 
+        //System.out.println(hayvan.get(0)); //kedi
+        //System.out.println(hayvan.get(2)); //tavsan
+
+        System.out.println(hayvan.contains("kopek")); //true
+        System.out.println(hayvan.contains("kedi")); //true
+        System.out.println(hayvan.contains("sinek")); //false
+
+        hayvan.add("ayı");
+        System.out.println(hayvan);//[kedi, kopek, tavsan, ayı]
+        Collections.sort(hayvan);
+        System.out.println(hayvan); //[ayı, kedi, kopek, tavsan] numeric order ile sıraladı. alfabetik sırayla.
+
+
+        List<String>first = new ArrayList<>();
+        List<String>second= new ArrayList<>();
+        System.out.println(first.equals(second)); //true karşılaştırdık aynı ve true verdi
+        System.out.println(hayvan.equals(first));  //false. karsıalstırdık aynı degıl
+
+        hayvan.clear();
+        System.out.println(hayvan);  //  []  heosini sildi
+
+
+
+
 
     }
 
