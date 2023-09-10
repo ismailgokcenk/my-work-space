@@ -11,6 +11,10 @@ public class methodCreation {
     public static void toplama (int a , int b){
         System.out.println(a+b);
     }
+
+
+
+
     }
 
 

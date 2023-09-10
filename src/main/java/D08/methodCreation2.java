@@ -9,6 +9,8 @@ public class methodCreation2 {
         System.out.println(result);
 
         print("Ali Can");
+        print2("kamil");
+        print("osman");
 
 
     }
@@ -21,5 +23,10 @@ public class methodCreation2 {
     public static void print(String str){
         System.out.println(str);
     }
+
+    public static void print2 (String str2){
+        System.out.println(str2);
+    }
+
 
 }
