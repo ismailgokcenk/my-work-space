@@ -25,6 +25,10 @@ public class StrBuilder {
         System.out.println(sb2.indexOf("l")); //2
         System.out.println(sb2.insert(3, "java", 1, 4)); //malavaals
         System.out.println(sb2.replace(3, 8, "ALİ"));
+        System.out.println(sb2.reverse()); //ters cevirdi
+        sb2.setCharAt(3,'X');
+        System.out.println(sb2);
+        System.out.println(sb2.toString());
 
 
     }
