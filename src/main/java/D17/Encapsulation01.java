@@ -57,5 +57,9 @@ public class Encapsulation01 {
                 ", soyIsim='" + soyIsim + '\'' +
                 ", yas=" + yas +
                 '}';
+
+
+
+
     }
 }
