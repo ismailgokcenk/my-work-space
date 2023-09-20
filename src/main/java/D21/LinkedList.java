@@ -1,5 +1,7 @@
 package D21;
 
+import java.util.Scanner;
+
 public class LinkedList {
 
     public static void main(String[] args) {
