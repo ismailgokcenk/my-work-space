@@ -15,4 +15,9 @@ public class Utils {
     }
 
 
+    public static boolean ciftNegatifBul(int a){
+        return a%2==0&& a<0;
+    }
+
+
 }
