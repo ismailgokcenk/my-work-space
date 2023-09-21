@@ -36,6 +36,5 @@ public class LinkedList {
         System.out.println(str);
         System.out.println(str.get(2));
 
-
     }
 }
