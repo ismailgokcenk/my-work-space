@@ -14,7 +14,11 @@ public class arrays3 {
         Arrays.sort(arrayStr);
         System.out.println(Arrays.toString(arrayStr));
 
-
+        int i = 1;
+        do{
+            System.out.print(i + ',');
+            i++;
+        }while (i <= 5);
         
 
 
