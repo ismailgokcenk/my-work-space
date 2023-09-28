@@ -11,7 +11,7 @@ public class Animal {
        1) Inharitance in faydalari
             a) Code tekrarlarindan kurtuluruz
             b) Code tamiri(maintenance) kolay olur
-            c) Chilt class lari daha atomic yapmis oluruz
+            c) Child class lari daha atomic yapmis oluruz
         2) Bir classi baska bir classin child classi yapmak icin extends keyword kullanilir
         3) Child class objectleri Parent Class dan method ve variable lari kullanabilirler
         4) Parent class objectleri chlid class dan method ve variable lari kullanamazlar
