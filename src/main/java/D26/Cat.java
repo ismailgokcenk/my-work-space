@@ -1,4 +1,4 @@
-package DAY26;
+package D26;
 
 public class Cat extends Animal {
     public void meow(){

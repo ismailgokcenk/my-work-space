@@ -1,4 +1,4 @@
-package DAY26;
+package D26;
 
 public class StudentRunner {
     public static void main(String[] args) {
