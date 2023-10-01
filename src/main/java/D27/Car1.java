@@ -1,8 +1,8 @@
 package D27;
 
-public class Car extends Vehicle {
+public class Car1 extends Vehicle {
 
-    public Car(){
+    public Car1(){
         System.out.println("Car 1");
     }
 
