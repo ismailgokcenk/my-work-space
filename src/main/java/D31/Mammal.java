@@ -2,6 +2,9 @@ package D31;
 
 public class Mammal extends Animal{
 
-    Mammal mmammal1=new Mammal();
-
+    @Override
+    protected void age() {
+        super.age();
+        System.out.println("Mammal have age");
+    }
 }

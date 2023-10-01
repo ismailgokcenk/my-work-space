@@ -2,18 +2,19 @@ package D31;
 
 public class Bird extends Animal{
 
-Bird bird1=new Bird();
-
     @Override
-    public String setAnimalAge(String animalAge) {
-        super.setAnimalAge(animalAge);
-        bird1.animalAge="bird1 10 yasinda";
-        return animalAge;
+    protected void age() {
+        super.age();
+        System.out.println("Birds have age");
     }
 
-    @Override
-    protected void sound() {
-        super.sound();
-        System.out.println("Bird sond is click click");
+    public Bird() {
     }
+
+    protected  int kg(int a , int b){
+        return(a-b);
+
+    }
+
 }
+

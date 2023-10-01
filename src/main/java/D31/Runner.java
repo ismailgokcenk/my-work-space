@@ -6,7 +6,17 @@ public class Runner {
 
 
       Seagul seagul1 = new Seagul();
-        System.out.println(seagul1.getAnimalAge());
+      seagul1.age();
+      seagul1.sount();
+        System.out.println(seagul1.kg(20, 3));
+
+
+        Sheep sheep1 = new Sheep();
+      sheep1.age();
+
+
+
+
 
 
     }

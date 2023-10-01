@@ -1,26 +1,16 @@
 package D31;
 
-public class Animal {
+public abstract class Animal {
 
-    protected void sound (){
-        System.out.println("Animal sound");
-    }
+ protected void sount(){
+     System.out.println("Animal sound");
+ }
 
-    protected String animalAge;
+ protected void age(){
+     System.out.println("Animal have age");
+ }
 
-    public String getAnimalAge() {
-        return animalAge;
-    }
 
-    public String setAnimalAge(String animalAge) {
-        this.animalAge = animalAge;
-        return animalAge;
-    }
-
-    public Animal(String animalAge) {
-        this.animalAge = animalAge;
-    }
-
-    public Animal() {
+   public Animal() {
     }
 }
