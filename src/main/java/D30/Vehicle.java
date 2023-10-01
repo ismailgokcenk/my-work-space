@@ -1,6 +1,6 @@
 package D30;
 
-public class Vehicle {
+public abstract class Vehicle {
 
     public void yakit(){
         System.out.println("Araclar yakıt tüketir");
@@ -16,7 +16,7 @@ public class Vehicle {
 
     private int km;
 
-    public Vehicle() {
+    protected Vehicle() {
     }
 
 
@@ -48,8 +48,9 @@ public class Vehicle {
         return km;
     }
 
-    public void setKm(int km) {
+    public int setKm(int km) {
         this.km = km;
+        return km;
     }
 
      protected int carYear(int a , int b){

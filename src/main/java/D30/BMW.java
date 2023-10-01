@@ -9,10 +9,12 @@ public class BMW extends Vehicle {
 
     @Override
     protected String plaka() {
-        System.out.println("34abc123456");
+        System.out.println("34 ABC 123");
 
         return null;
     }
+
+
 }
 
 
