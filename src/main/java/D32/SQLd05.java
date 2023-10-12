@@ -127,3 +127,124 @@
         --Eğer bir şehirde alınan MAX maas 5000’den düşükse sehir ismini ve MAX maasi veren sorgu yazınız.ÖDEV
 
         --31-UNION:iki farklı sorgu sonucunu birleştirerek görüntülemeyi sağlar
+
+        ------------DAY'5 NT-------------
+        --CREATE: INSERT KOMUTU
+        --READ:   SELECT KOMUTU
+        --UPDATE : //BUGUNKU KONU
+        --DELETE : DELETE KOMUTU
+
+        --26-UPDATE
+        --UPDATE .. SET sütunadı = yeni deger :
+        --WHERE koşul      : koşulu saglayan satırlardaki dataları degistirir , günceller
+
+        SELECT * FROM calisanlar3;
+
+        --idsi 123456789 olan çalışanın isyeri ismini 'Trendyol' olarak güncelleyeniz.
+
+        UPDATE calisanlar3
+        SET isyeri ='Trendyol'
+        WHERE id = 123456789
+
+        -- id’si 567890123 olan çalışanın ismini 'Veli Yıldırım' ve
+        --sehirini 'Bursa' olarak güncelleyiniz.
+
+        UPDATE calisanlar3
+        SET isim='Kamil Yıldırım',sehir='Hakkari'
+        WHERE id=567890123
+
+        --  markalar tablosundaki marka_id değeri 102 ye eşit veya büyük olanların marka_id’sini 2 ile çarparak değiştirin.
+
+        SELECT * FROM markalar
+
+
+        UPDATE markalar SET marka_id=marka_id*2 WHERE marka_id>=102;
+
+        -- markalar tablosundaki tüm markaların calisan_sayisi değerlerini marka_id ile toplayarak güncelleyiniz.
+
+        UPDATE markalar SET calisan_sayisi=calisan_sayisi+marka_id
+
+
+        --calisanlar3 tablosundan Ali Seker'in isyerini, 'Veli Yıldırım' ın isyeri ismi ile güncelleyiniz. -- ben kamil yıldırım yaptım ukarıda bak
+
+        UPDATE calisanlar3
+        SET isyeri=(SELECT isyeri FROM calisanlar3 WHERE isim='Kamil Yıldırım')
+        WHERE isim='Ali Seker'
+
+        SELECT * FROM calisanlar3;
+
+
+        --calisanlar3 tablosunda maasi 1500 olanların isyerini, markalar tablosunda
+        --calisan_sayisi 20000 den fazla olan markanın ismi ile değiştiriniz.
+
+        UPDATE calisanlar3
+        SET isyeri= (SELECT marka_isim FROM markalar WHERE calisan_sayisi>20000)
+        WHERE maas =1500;
+
+        --calisanlar3 tablosundaki isyeri 'Vakko' olanların sehir bilgisinin sonuna ' Şubesi' ekleyiniz.
+
+
+        UPDATE calisanlar3
+        SET sehir=sehir || ' Subesi'  -- e kez calıstırdım o yuzden ıkı kez subesı yazıyor
+        WHERE isyeri='Vakko';
+
+        --alternatif
+        UPDATE calisanlar3
+        SET sehir=CONCAT(sehir,' Şubesi')
+        WHERE isyeri='Vakko'
+
+
+        --27-IS NULL condition
+
+
+        CREATE TABLE people
+        (
+        ssn char(9),
+        name varchar(50),
+        address varchar(50)
+        );
+
+        INSERT INTO people VALUES(123456789, 'Ali Can', 'Istanbul');
+        INSERT INTO people VALUES(234567890, 'Veli Cem', 'Ankara');
+        INSERT INTO people VALUES(345678901, 'Mine Bulut', 'Izmir');
+        INSERT INTO people (ssn, address) VALUES(456789012, 'Bursa');
+        INSERT INTO people (ssn, address) VALUES(567890123, 'Denizli');
+        INSERT INTO people (ssn, name) VALUES(567890123, 'Veli Han');
+
+        SELECT * FROM people;
+        ------------------------------------------------------------------------------------------------------------------------------------
+
+        --people tablosundaki name sütununda NULL olan değerleri listleyiniz.
+
+        SELECT * FROM people WHERE name IS NULL;     --name = null diyemiyoruz
+
+        --people tablosundaki adres sütununda NULL olmayan değerleri listleyiniz.
+
+        SELECT *
+        FROM people
+        WHERE address IS NOT NULL;   -- calısmadı!!!!!!!!!!!!
+
+        --people tablosunda name sütunu null olanların name değerini
+        --'MISSING...' olarak güncelleyiniz..
+
+
+
+
+        --28-ORDER BY
+        CREATE TABLE person
+        (
+        ssn char(9),
+        isim varchar(50),
+        soyisim varchar(50),
+        adres varchar(50)
+        );
+        INSERT INTO person VALUES(123456789, 'Ali','Can', 'Istanbul');
+        INSERT INTO person VALUES(234567890, 'Veli','Cem', 'Ankara');
+        INSERT INTO person VALUES(345678901, 'Mine','Bulut', 'Ankara');
+        INSERT INTO person VALUES(256789012, 'Mahmut','Bulut', 'Istanbul');
+        INSERT INTO person VALUES (344678901, 'Mine','Yasa', 'Ankara');
+        INSERT INTO person VALUES (345678901, 'Veli','Yilmaz', 'Istanbul');
+        INSERT INTO person VALUES(256789018, 'Samet','Bulut', 'Izmir');
+        INSERT INTO person VALUES(256789013, 'Veli','Cem', 'Bursa');
+        INSERT INTO person VALUES(256789010, 'Samet','Bulut', 'Ankara');
+        SELECT * FROM person;
