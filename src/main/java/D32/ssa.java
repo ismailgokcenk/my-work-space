@@ -224,6 +224,119 @@ public class ssa {
     FROM mart m
     WHERE NOT EXISTS (SELECT urun_isim FROM nisan n WHERE n.urun_isim=m.urun_isim)
 
+    CREATE TABLE ogrenciler (
+            id INTEGER PRIMARY KEY,
+            isim VARCHAR(50),
+    adres VARCHAR(100),
+    sinav_notu INTEGER
+);
+
+--veya
+
+    CREATE TABLE ogrenciler (
+            id INTEGER ,
+            isim VARCHAR(50),
+    adres VARCHAR(100),
+    sinav_notu INTEGER
+    CONSTRAINT std_pk PRIMARY KEY (id)
+);
+
+
+--2 PK olursa:
+    CREATE TABLE ogrenciler (
+            id INTEGER ,
+            isim VARCHAR(50),
+    adres VARCHAR(100),
+    sinav_notu INTEGER
+    CONSTRAINT std_pk2 PRIMARY KEY (id,isim)
+);
+
+/*
+
+neden composite pk ya ihtiyac duyarız?
+2023064120 gibi composite PK dusunelim. (ogrenci no)
+2023 ogrenci kayıt yılı, 064 fakülte kodu , 120 ogrenci kayıt sırası
+
+
+*/
+
+
+    CREATE TABLE ogrenciler (
+            id INTEGER ,
+            isim VARCHAR(50),
+    adres VARCHAR(100),
+    sinav_notu INTEGER CHECK(sinav_notu>0 AND sinav_notu<100)
+    CONSTRAINT std_pk2 PRIMARY KEY (id,isim)
+);
+
+--Tabloya veri ekleme
+    INSERT INTO ogrenciler VALUES (1,'Ali Can','Istanbul',80);
+
+    INSERT INTO ogrenciler(id,isim,adres,sinav_notu) VALUES
+(2,'Zeki Bey','Izmir',90),
+        (3,'Veli Can','Trabzon',65),
+        (4, 'Mirac','Bursa',45),
+        (5,'Yavuz Bal','Antalya',55);
+
+    INSERT INTO ogrenciler(id,isim,sinav_notu) VALUES
+(6,'Bilal Degirmen',95),
+        (7,'Fahri Ersöz',92);
+
+    SELECT * FROM ogrenciler;
+
+-- SORU1: ogrenciler tablosundaki id ve isim bilgileri ile tum recordlari getirelim :
+    SELECT id,isim FROM ogrenciler
+
+-- SORU2: Sinav notu 80'den buyuk olan ogrencilerin tum bilgilerini listele
+    SELECT * FROM ogrenciler WHERE sinav_notu>80;
+
+-- SORU3: Adresi Ankara olan ogrencilerin tum bilgilerini listele
+    SELECT * FROM ogrenciler WHERE adres='Ankara';
+
+-- SORU4: Sinav notu 80 ve adresi Istanbul olan ogrenci ismini listele
+    SELECT isim FROM ogrenciler WHERE adres='Istanbul' AND sinav_notu=80;
+
+-- SORU5: Sinav notu 55 veya 100 olan ogrencilerin tum bilgilerini listele
+    SELECT * FROM ogrenciler WHERE sinav_notu=55 OR sinav_notu=100;
+    SELECT * FROM ogrenciler WHERE sinav_notu in (55,100);
+
+-- SORU6: Sinav notu 65 ve 85 arasinda olan ogrencilerin tum bilgilerini listele
+    SELECT * FROM ogrenciler WHERE sinav_notu between 65 and 85;
+
+-- SORU7: id'si 3 ve 5 arasinda olmayan ogrencilerin isim ve sinav notu listele
+    SELECT isim,sinav_notu FROM ogrenciler WHERE id not between 3 and 5;
+
+-- SORU8: En yuksek sinav puani nedir
+    SELECT MAX(sinav_notu) FROM ogrenciler;
+
+-- SORU9: İzmir'de yaşayan ve sınav notu 50'den yuksek olan öğrencilerin listesi:
+    SELECT * FROM ogrenciler WHERE adres='Izmir' AND sinav_notu>50;
+
+-- SORU10: Öğrenci sayısı ve ortalama sınav notu:
+    SELECT COUNT(*), AVG(sinav_notu) FROM ogrenciler;
+    SELECT COUNT(*), ROUND(AVG(sinav_notu),1) FROM ogrenciler;
+
+-- SORU11: sinav_notu 55 olan satiri siliniz
+    DELETE FROM ogrenciler WHERE sinav_notu=55;
+    SELECT * from ogrenciler;
+
+-- SORU12: ismi Derya Soylu veya Cemal Dogan olan satirlari siliniz
+    DELETE FROM ogrenciler WHERE isim='Derya Soylu' OR isim='Cemal Dogan';
+    DELETE FROM ogrenciler WHERE isim IN('Derya Soylu','Cemal Dogan');
+
+-- SORU13 : Ogrenciler tablosunn icerigini siliniz
+    DELETE FROM ogrenciler;
+    TRUNCATE TABLE ogrenciler
+
+--SORU14 : Ogrenciler Tablosunu siliniz
+    DROP TABLE ogrenciler
+
+
+
+
+
+
+
 
 
 
